@@ -1,16 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-regular-svg-icons";
+import { faSun } from "@fortawesome/free-regular-svg-icons";
+import { ThemeContext } from "../Context/ThemeProvider";
+import { useContext, useEffect } from "react";
 export default function Header() {
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+  useEffect(() => {
+    darkTheme
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }, [darkTheme]);
   return (
-    <div className="px-4 py-6 flex justify-between items-center shadow-md bg-lightElementBg dark:bg-darkElementBg">
+    <div className="pl-4 pr-3 py-4 flex justify-between items-center shadow-md bg-lightElementBg dark:bg-darkElementBg">
       <h2 className="text-lg font-bold">Where in the world?</h2>
-      <div>
+      <div onClick={() => setDarkTheme((prevState) => !prevState)}>
         <FontAwesomeIcon
-          tabIndex="0"
-          className="text-xl sm:mr-4"
-          icon={faMoon}
+          title={darkTheme ? "Change Theme to Light" : "Change Theme to Dark"}
+          className="outline-none text-xl p-2 sm:mr-4 -rotate-12 md:hover:cursor-pointer md:opacity-80 md:hover:opacity-100"
+          icon={darkTheme ? faMoon : faSun}
         ></FontAwesomeIcon>
-        <span className="hidden sm:block">Dark</span>
       </div>
     </div>
   );
