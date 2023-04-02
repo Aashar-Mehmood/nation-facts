@@ -17,8 +17,10 @@ export default function Index() {
   }, [countries.length]);
   return (
     <>
-      <SearchBar />
-      <FilterDropDown />
+      <div className="lg:flex lg:justify-between lg:items-center">
+        <SearchBar />
+        <FilterDropDown />
+      </div>
       {loading ? (
         <img
           className="relative left-2/4 -translate-x-2/4 z-10"
@@ -26,9 +28,11 @@ export default function Index() {
           alt="loading..."
         />
       ) : (
-        countries.map((countryObj, index) => {
-          return <CountryCard key={index} {...countryObj} />;
-        })
+        <div className="block md:flex md:flex-wrap md:justify-evenly xl:justify-between">
+          {countries.map((countryObj, index) => {
+            return <CountryCard key={index} {...countryObj} />;
+          })}
+        </div>
       )}
     </>
   );

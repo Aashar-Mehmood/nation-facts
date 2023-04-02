@@ -10,8 +10,8 @@ export default function CountryCard(props) {
     region,
   } = props;
   return (
-    <div className="mt-14 p-1 rounded-md shadow bg-lightElementBg text-lightText dark:bg-darkElementBg dark:text-darkText">
-      <img src={png} alt={alt} className="rounded-t-md" />
+    <div className="mt-14 p-1 rounded-md shadow bg-lightElementBg text-lightText dark:bg-darkElementBg dark:text-darkText md:w-2/5 lg:w-28 xl:w-23">
+      <img src={png} alt={alt} className="rounded-t-md w-full" />
       <div className="px-6 py-10">
         <h2 className="text-3xl font-bold mb-4">{official}</h2>
         <p className="mt-2">

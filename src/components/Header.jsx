@@ -11,7 +11,14 @@ export default function Header() {
       : document.documentElement.classList.remove("dark");
   }, [darkTheme]);
   return (
-    <div className="pl-4 pr-3 py-4 flex justify-between items-center shadow-md bg-lightElementBg dark:bg-darkElementBg">
+    <div
+      className="
+    px-6 py-4 
+    flex justify-between items-center 
+    shadow-md 
+    bg-lightElementBg dark:bg-darkElementBg
+    sm:px-10"
+    >
       <h2 className="text-lg font-bold">Where in the world?</h2>
       <div onClick={() => setDarkTheme((prevState) => !prevState)}>
         <FontAwesomeIcon

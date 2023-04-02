@@ -19,6 +19,10 @@ module.exports = {
         lightText: "hsl(200, 15%, 8%)",
         darkText: "hsl(0, 0%, 100%)",
       },
+      width: {
+        28: "28%",
+        23:"23%"
+      },
     },
   },
   plugins: [],

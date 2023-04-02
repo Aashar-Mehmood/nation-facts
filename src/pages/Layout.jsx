@@ -7,7 +7,7 @@ export default function Layout() {
     <CountriesProvider>
       <ThemeProvider>
         <Header />
-        <main className="px-4 py-6">
+        <main className="p-6 sm:p-10 sm:max-w-md sm:mx-auto md:max-w-full">
           <Outlet />
         </main>
       </ThemeProvider>
