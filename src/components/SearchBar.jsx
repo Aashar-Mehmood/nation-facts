@@ -1,6 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function SearchBar() {
+  const [countryName, setCountryName] = useState('');
+  const navigate = useNavigate();
+  function handleSearch(e){
+    setCountryName(e.target.value);
+    if(e.key==="Enter"){
+      navigate(`/details/${countryName}`);
+    }
+  }
   return (
     <div
       tabIndex="1"
@@ -11,7 +21,8 @@ export default function SearchBar() {
         icon={faSearch}
       ></FontAwesomeIcon>
       <input
-        className="focus:outline-none bg-inherit"
+        onKeyUp={handleSearch}
+        className="focus:outline-none bg-inherit h-full"
         type="text"
         placeholder="Search for a country..."
       />

@@ -1,13 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import DropDownItem from "./DropDownItem";
-const regionsList = ["Africa", "Asia", "America", "Europe", "Oceania"];
+import { CountriesContext } from "../Context/CountriesProvider";
+const regionsList = ["Africa", "Asia", "America", "Europe", "Oceania", "Filter by Region"];
 export default function FilterDropDown() {
-  const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
   const [showDropDown, setShowDropDown] = useState(false);
+  const {region, setRegion} = useContext(CountriesContext);
   function selectRegion(e) {
-    setSelectedRegion(e.target.value);
+    setRegion(e.target.value);
   }
   return (
     <div
@@ -15,7 +16,7 @@ export default function FilterDropDown() {
       className="bg-lightElementBg dark:bg-darkElementBg shadow rounded-md py-4 mt-6"
     >
       <div className="flex justify-between px-4 items-center relative md:cursor-pointer md:hover:cursor-pointer">
-        {selectedRegion}
+        {region}
         <FontAwesomeIcon
           icon={faAngleDown}
           className="ring-transparent"
