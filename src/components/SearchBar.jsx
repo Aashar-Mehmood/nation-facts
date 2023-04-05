@@ -14,7 +14,7 @@ export default function SearchBar() {
   return (
     <div
       tabIndex="1"
-      className="pl-4 py-4 rounded-md shadow space-x-4 bg-lightElementBg dark:bg-darkElementBg md:max-w-lg md:mx-auto lg:max-w-none"
+      className="flex items-center px-4 rounded-md shadow space-x-4 bg-lightElementBg dark:bg-darkElementBg md:max-w-lg md:mx-auto lg:max-w-none lg:ml-0 lg:w-28%"
     >
       <FontAwesomeIcon
         className="text-slate-400"
@@ -22,7 +22,7 @@ export default function SearchBar() {
       ></FontAwesomeIcon>
       <input
         onKeyUp={handleSearch}
-        className="focus:outline-none bg-inherit h-full"
+        className="focus:outline-none bg-inherit h-14 w-full"
         type="text"
         placeholder="Search for a country..."
       />

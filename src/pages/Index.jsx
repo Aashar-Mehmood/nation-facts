@@ -28,7 +28,7 @@ export default function Index() {
           alt="loading..."
         />
       ) : (
-        <div className="block md:flex md:flex-wrap md:justify-evenly xl:justify-between">
+        <div className="md:flex md:flex-wrap md:justify-between md:last:mr-auto">
           {countries.map((countryObj, index) => {
             return <CountryCard key={index} {...countryObj} />;
           })}

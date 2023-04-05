@@ -17,13 +17,13 @@ export default function Header() {
     flex justify-between items-center 
     shadow-md 
     bg-lightElementBg dark:bg-darkElementBg
-    sm:px-10"
+    sm:px-10 lg:px-14 lg:py-6"
     >
       <h2 className="text-lg font-bold">Where in the world?</h2>
       <div onClick={() => setDarkTheme((prevState) => !prevState)}>
         <FontAwesomeIcon
           title={darkTheme ? "Change Theme to Light" : "Change Theme to Dark"}
-          className="outline-none text-xl p-2 sm:mr-4 -rotate-12 md:hover:cursor-pointer md:opacity-80 md:hover:opacity-100"
+          className="outline-none text-xl -rotate-12 md:hover:cursor-pointer md:opacity-80 md:hover:opacity-100"
           icon={darkTheme ? faMoon : faSun}
         ></FontAwesomeIcon>
       </div>

@@ -20,7 +20,7 @@ export default function FilterDropDown() {
   return (
     <div
       onClick={() => setShowDropDown((prevState) => !prevState)}
-      className="bg-lightElementBg dark:bg-darkElementBg shadow rounded-md py-4 mt-6 md:max-w-lg md:mx-auto lg:max-w-none lg:mt-0"
+      className="bg-lightElementBg dark:bg-darkElementBg shadow rounded-md py-4 mt-6 md:max-w-lg md:mx-auto lg:max-w-none lg:mt-0 lg:mr-0 lg:w-28%"
     >
       <div className="flex justify-between px-4 items-center relative md:cursor-pointer md:hover:cursor-pointer">
         {region}
